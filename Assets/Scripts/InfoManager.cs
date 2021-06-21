@@ -35,7 +35,7 @@ public class InfoManager : MonoBehaviour
     {
         SaveData data = new SaveData();
         data.bestScore = 0;
-        data.leaderScore = "None";
+        data.leaderScore = "";
         data.lastPlayer = "";
         string json = JsonUtility.ToJson(data);
 

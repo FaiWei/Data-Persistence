@@ -60,13 +60,6 @@ public class MainManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (m_Points > InfoManager.Instance.bestScore)
-                {
-                    InfoManager.Instance.bestScore = m_Points;
-                    InfoManager.Instance.leaderScore = InfoManager.Instance.currentPlayer;
-                    bestScoreText.text = $"Best Score : {InfoManager.Instance.leaderScore} : {InfoManager.Instance.bestScore}";
-
-                }
                 InfoManager.Instance.Save();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
@@ -83,6 +76,13 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+        if (m_Points > InfoManager.Instance.bestScore)
+        {
+            InfoManager.Instance.bestScore = m_Points;
+            InfoManager.Instance.leaderScore = InfoManager.Instance.currentPlayer;
+            bestScoreText.text = $"Best Score : {InfoManager.Instance.leaderScore} : {InfoManager.Instance.bestScore}";
+
+        }
     }
 
 
